@@ -1,0 +1,21 @@
+#play_container{
+    border: 2px solid black;
+  	width:400px;
+  	padding:20px;
+
+}
+table, td, th 
+{    
+  border: 1px solid black;
+  text-align: left;
+}
+table 
+{
+  border-collapse: collapse;
+  width: 400px;
+}
+#question_container{
+	border: 2px solid black;
+  	width:500px;
+  	padding:20px;
+}

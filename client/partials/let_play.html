@@ -1,0 +1,39 @@
+<div ng-controller='let_playController'>
+    <div class='wrapper'>
+        <div>
+            <h2>Hi, {{currentUser}}!</h2>
+            <h4>Choose an answer for each of the questions and submit the test once done.</h4>
+            <h4>Good Luck!</h4>
+        </div>
+        <div id="question_container">
+            <form ng-model = "answer_1" >
+                <h3>1. {{questions.question[0].question}}</h3>
+                    <p><input type='radio' ng-model="answer_1.first" value='1'> {{questions.question[0].correct_answer}}</input></p>
+                    <input type='radio' ng-model="answer_1.first" value='2'> {{questions.question[0].fake_answer_1}}<p></input></p>
+                    <p><input type='radio' ng-model="answer_1.first" value='3'> {{questions.question[0].fake_answer_2}}</input></p>
+            </form>
+        </div> 
+        <br>
+        <div id="question_container">
+            <form ng-model = "answer_2">
+                <h3>2. {{questions.question[1].question}}</h3>
+                    <p><input type='radio' ng-model="answer_2.second" value='1'> {{questions.question[1].correct_answer}}</input></p>
+                    <input type='radio' ng-model="answer_2.second" value='2'> {{questions.question[1].fake_answer_1}}<p></input></p>
+                    <p><input type='radio' ng-model="answer_2.second" value='3'> {{questions.question[1].fake_answer_2}}</input></p>
+            </form>
+        </div> 
+        <br>
+        <div id="question_container">
+            <form ng-model = "answer_3">
+                <h3>3. {{questions.question[2].question}}</h3>
+                    <p><input type='radio' ng-model="answer_3.third" value='1'> {{questions.question[2].correct_answer}}</input></p>
+                    <input type='radio' ng-model="answer_3.third" value='2'> {{questions.question[2].fake_answer_1}}<p></input></p>
+                    <p><input type='radio' ng-model="answer_3.third" value='3'> {{questions.question[2].fake_answer_2}}</input></p>
+            </form>
+        </div>   
+            <a href='#!/home'><button>Cancel</button></a>
+            <button ng-click='submit()'>Submit</button>
+            <h4>{{errors}}</h4>
+
+    </div>
+</div>
