@@ -21,6 +21,7 @@
             <a href='#!/home'><button>Cancel</button></a> <input type="submit" value = "Add Question" ng-click="add_question()">
         </form>
     </div>
+    {{errors}}
     <h3>{{errors.question.message}}</h3>
     <h3>{{errors.correct_answer.message}}</h3>
     <h3>{{errors.fake_answer_1.message}}</h3>

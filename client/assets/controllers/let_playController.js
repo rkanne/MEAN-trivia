@@ -6,7 +6,8 @@ app.controller('let_playController', ['$scope','let_playFactory','$location', '$
 	$scope.get_questions = function(){
         let_playFactory.get_questions(function(data){
             console.log(data.data)
-            var random_questions = $scope.random(data.data.question);            
+            console.log(data.data.question.length);           
+            var random_questions = $scope.random(data.data.question); 
             $scope.questions = data.data;
         });
     }

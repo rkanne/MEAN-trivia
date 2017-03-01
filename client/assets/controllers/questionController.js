@@ -6,11 +6,10 @@ if($cookies.get('name') == undefined){
 $scope.message = '';
 $scope.add_question = function(){
 	console.log("I am inside add Question");
-    questionsFactory.add_question($scope.question, function(data){
-		console.log("-----I am inside questions Factory", $scope.question);
+
 	    if($scope.question == undefined){
 	    	console.log("undefined")
-	    	$scope.errors = data.data.errors;
+	    	$scope.errors = '** Please insert information.';
 	  	}else if ($scope.question != undefined){
 		  	console.log("Not Undefined",$scope.question.question)
 		  	if ($scope.question.question.length < 15) {
@@ -23,8 +22,7 @@ $scope.add_question = function(){
 			} else if ($scope.question.fake_answer_2 == undefined ) {
 				$scope.message_fake_answer_2 = 'Fake Answre 2 should not be blank!';
 	    		$location.url('/new_question');
-
-		}else{
+	    	}else{
 			questionsFactory.add_question($scope.question, function(data) {
 				if(data) {
 					alert('I have added question!!');
@@ -33,10 +31,8 @@ $scope.add_question = function(){
 
 			});
 
-		}
-
+			}
 
 	  }	
-   })
 }
 }]);
